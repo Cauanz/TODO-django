@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+   {% block title %}
+      Task List  
+   {% endblock %}
+   
+   {% block content %}
+   <h1>Task List</h1>
+   <ul>
+      {% for task in tasks %}
+         <li>
+            <div class="task">
+               <div class="content">
+                  <h2>Titulo: {{ task.title }}</h2>
+                  <p>Descrição: {{ task.description }}</p>
+                  <span>Completo? {% if task.completed %} Concluido {% else %} Não Concluido {% endif %}</span>
+               </div>
+               <p class="date">Criado em: {{ task.created_at }}</p>
+            </div>
+         </li>
+      {% empty %}
+         <li>No tasks found.</li>
+      {% endfor %}
+   </ul>
+
+   <a href="{% url 'tasks:create_task' %}">Criar tarefa</a>
+   {% endblock %}

@@ -1,0 +1,139 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+   background-color: #f2f2f2;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+   margin-top: 20px;
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 5px;
+}
+
+form input[type="text"] {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+
+form button[type="submit"] {
+   background-color: #333;
+   color: #fff;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+   background-color: #555;
+}
+
+ul {
+   list-style-type: none;
+   margin-bottom: 20px;
+}
+
+ul li {
+   margin-bottom: 10px;
+}
+
+.task {
+   height: 260px;
+   max-width: 250px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 50px;
+   background: lightslategrey;
+   padding: 20px;
+   position: relative;
+}
+
+.task div {
+   background: lightslategray;
+}
+
+.task span {
+   margin-bottom: 10px;
+}
+
+.task .date {
+   position: absolute;
+   bottom: 10px;
+}
+
+a {
+   display: inline-block;
+   background-color: #333;
+   color: #fff;
+   padding: 10px 20px;
+   border-radius: 5px;
+   text-decoration: none;
+   margin-top: 20px;
+}
+
+a:hover {
+   background-color: #555;
+}
+
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 20px;
+}
+
+.header {
+   background-color: #333;
+   color: #fff;
+   padding: 20px;
+}
+
+.navbar {
+   background-color: #f2f2f2;
+   padding: 10px;
+}
+
+.navbar ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+.navbar li {
+   display: inline-block;
+   margin-right: 10px;
+}
+
+.navbar a {
+   color: #333;
+   text-decoration: none;
+   padding: 5px;
+}
+
+.content {
+   background-color: #fff;
+   padding: 20px;
+}
+
+.footer {
+   background-color: #333;
+   color: #fff;
+   padding: 20px;
+   text-align: center;
+}

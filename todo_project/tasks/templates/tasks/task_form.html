@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Create Task
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+   {% csrf_token %}
+   {% comment %} <input type="text" name="task" placeholder="Enter task"> {% endcomment %}
+   {{ form.as_p }}
+   <button type="submit">Add Task</button>
+</form>
+{% endblock %}
