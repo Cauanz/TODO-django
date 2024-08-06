@@ -18,3 +18,20 @@ def create_task(request):
    else:
       form = TaskForm()
    return render(request, 'tasks/task_form.html', {'form': form})
+
+def complete_task(request, task_id):
+   task = get_object_or_404(Task, id=task_id) #Busca objeto (Task) cujo id seja igual o id ou retorna um 404 caso não encontre
+   if request.method == 'POST':
+      task.completed = not task.completed
+      task.save()
+      return redirect('tasks:list')
+   else:
+      return redirect('tasks:create_task')
+   
+def remove_task(request, task_id):
+   task = get_object_or_404(Task, id=task_id)
+   if request.method == 'POST':
+      task.delete()
+      return redirect('tasks:list')
+   else:
+      return redirect('tasks:create_task')

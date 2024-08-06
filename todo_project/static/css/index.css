@@ -14,7 +14,7 @@ body {
    justify-content: center;
 }
 
-form {
+.create-task {
    display: flex;
    flex-direction: column;
    margin-top: 20px;
@@ -23,7 +23,7 @@ form {
    border-radius: 5px;
 }
 
-form input[type="text"] {
+.create-task input[type="text"] {
    width: 100%;
    padding: 10px;
    margin-bottom: 10px;
@@ -31,7 +31,7 @@ form input[type="text"] {
    border-radius: 5px;
 }
 
-form button[type="submit"] {
+.create-task button[type="submit"] {
    background-color: #333;
    color: #fff;
    padding: 10px 20px;
@@ -40,11 +40,13 @@ form button[type="submit"] {
    cursor: pointer;
 }
 
-form button[type="submit"]:hover {
+.create-task button[type="submit"]:hover {
    background-color: #555;
 }
 
 ul {
+   width: 90%;
+   overflow: scroll;
    list-style-type: none;
    margin-bottom: 20px;
 }
@@ -54,29 +56,42 @@ ul li {
 }
 
 .task {
-   height: 260px;
-   max-width: 250px;
+   height: 40px;
+   width: 90%;
    display: flex;
-   flex-direction: column;
    align-items: center;
-   margin: 50px;
+   justify-content: space-evenly;
    background: lightslategrey;
-   padding: 20px;
+   padding: 30px;
+   margin: 10px;
    position: relative;
+}
+
+.task button {
+   width: 90px;
+   height: 30px;
+   border: none;
+   background: lightgreen;
+   margin: 5px;
+   cursor: pointer;
+}
+
+.remove-task button {
+   background: lightcoral;
+}
+
+.task .description {
+   display: none;
 }
 
 .task div {
    background: lightslategray;
 }
 
-.task span {
-   margin-bottom: 10px;
-}
-
-.task .date {
+/* .task .date {
    position: absolute;
    bottom: 10px;
-}
+} */
 
 a {
    display: inline-block;

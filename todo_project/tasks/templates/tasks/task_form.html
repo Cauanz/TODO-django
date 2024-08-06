@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<form method="POST">
+<form method="POST" class="create-task">
    {% csrf_token %}
    {% comment %} <input type="text" name="task" placeholder="Enter task"> {% endcomment %}
    {{ form.as_p }}

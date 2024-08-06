@@ -8,15 +8,21 @@
    <h1>Task List</h1>
    <ul>
       {% for task in tasks %}
-         <li>
-            <div class="task">
-               <div class="content">
-                  <h2>Titulo: {{ task.title }}</h2>
-                  <p>Descrição: {{ task.description }}</p>
-                  <span>Completo? {% if task.completed %} Concluido {% else %} Não Concluido {% endif %}</span>
-               </div>
+         <li class="task">
+            <h3>{{ task.title }}</h3>
+            <form action="{% url 'tasks:remove_task' task.id %}" method="post" class="remove-task">
+               {% csrf_token %}
+               <input type="hidden" name="task-id" value="{{ task.id }}">
+               <button type="submit">Remover tarefa</button>
+            </form>
+            <form action="{% url 'tasks:complete_task' task.id %}" method="post">
+               {% csrf_token %}
+               <input type="hidden" name="task-id" value="{{ task.id }}">
+               <button type="submit">Marcar como concluido</button>
+            </form>
+            <p class="description" >Descrição: {{ task.description }}</p>
+               <span>{% if task.completed %} Concluido {% else %} Não Concluido {% endif %}</span>
                <p class="date">Criado em: {{ task.created_at }}</p>
-            </div>
          </li>
       {% empty %}
          <li>No tasks found.</li>
